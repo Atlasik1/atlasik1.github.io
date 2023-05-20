@@ -273,6 +273,7 @@ div.card > img {
     z-index: 0;
 }
 div.card-content {
+    position: relative;
     padding: 4em 1em;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.05);
@@ -283,6 +284,7 @@ div.card-content:hover {
     backdrop-filter: blur(10px);
 }
 div.card-content p {
+    position: relative;
     margin-top: 2em;
     margin-bottom: 1em;
     z-index: 100;

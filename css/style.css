@@ -50,20 +50,20 @@ div.hamburger {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 100;
+    z-index: 101;
 }
 div.hamburger-void {
     backdrop-filter: blur(5px);
     width: 40%;
     height: 100%;
-    z-index: 100;
+    z-index: 101;
 }
 div.hamburger-menu {
     width: 60%;
     height: 100%;
     background-color: black;
     
-    z-index: 100;
+    z-index: 101;
 }
 div.hamburger-container {
     width: 100%;

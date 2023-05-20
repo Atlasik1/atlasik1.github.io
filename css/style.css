@@ -180,7 +180,7 @@ section.message {
     height: 90vh;
     position: relative;
 }
-article.introduction {
+.ksp2-iconic {
     background-image: url("../images/ksp2_iconic.jpg");
     background-size: 250%;
     height: 40vh;
@@ -240,6 +240,10 @@ div.sectionHeader {
 }
 .sectionText {
     padding-left: 12.5%;
+    transition: all 0.5s ease-in;
+}
+.sectionText:hover {
+    transform:translateX(5%) scale(1.25) skewX(-12deg);
 }
 
 div.game-facts { /* "info/fact cards" about the game */
@@ -276,15 +280,41 @@ div.card-content p {
     margin-bottom: 1em;
 }
 
-div.chat-icon {
+img.chat-icon {
     display: none;
     position: fixed;
     right: 1.5em;
     bottom: 3.5em;
-    background-color: gainsboro;
+
     width: 50px;
     height: 50px;
     z-index: 100;
+    filter: invert() drop-shadow(0 0 50px crimson); /*  https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness  */
+
+    transition: all 0.4s ease;
+    animation-name: chatIconWander;
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+}
+img.chat-icon:hover {
+    width: 60px;
+    height: 60px;
+}
+@keyframes chatIconWander { /* https://ssps.cajthaml.eu/2-wba/selfstudy/lekce-animace/prav%C3%A9-animace-63da83100166c76bd5380f18 */
+    from {
+        bottom: 2em;
+        transform: rotate(0); /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate */
+    }
+    50% {
+        bottom: 3em;
+        transform: rotate(-5deg);
+    }
+    to {
+        bottom: 2em;
+        transform: rotate(0);
+    }
 }
 div.chat {
     max-width: 24em;
@@ -315,6 +345,7 @@ div.chat > section.content {
     flex: 3;
     overflow-y: auto; /*  https://stackoverflow.com/questions/4646708/css-how-to-get-scrollbars-for-div-inside-container-of-fixed-height  */
     overflow-x: hidden;
+    gap: 2em;
 
     position: relative;
     display: flex;
@@ -326,56 +357,73 @@ div.chat > textarea[name="chat"] {
     flex: 1;
 }
 
-div.chat > section.content > div.chat-exit {
+div.chat > section.content > div.chat-reset {
     position: absolute;
-    left: -20px;
+    left: -25px;
     top: -20px;
     width: 10px;
     height: 30px;
-    background-color: green;
+    background-color: rgba(0,128,0,0.4);
     overflow: visible;
+    transition: all ease-out 0.3s;
+}
+div.chat > section.content > div.chat-reset:hover {
+    left: -10px;
+    background-color: rgb(27, 185, 98);
 }
 
+div.chat > section.content * {
+    font-size: 1.2em;
+}
 div.chat > section.content div {
     width: 90%;
     margin: 5% 0;
     padding: 5%;
     background-color: rgb(97, 66, 66);
-    overflow: scroll;
     border-radius: 1em;
 }
-div.chat-infobox {
+section.content div.chat-infobox {
     display: flex;
     flex-direction: column;
-    background-color: rgb(97, 66, 66);
+    background-color: rgb(66, 88, 97);
     border: dashed green 4px;
 }
-div.chat > section.content * {
-    font-size: 1.4em;
-}
-div.chat-infobox hr {
-    width: 100%;
-}
-div.chat > section.content p, div.chat > section.content h2 {
+div.chat > section.content > article *, div.chat > section.content p, div.chat > section.content h2 {
     color: black;
 }
+div.chat section.content article div * {
+    color: white;
+}
+div.chat section.content article div.chat-infobox h1 {
+    font-size: 1em;
+}
+div.chat section.content article div.chat-infobox p {
+    font-size: 0.75em;
+}
+article div.chat-infobox hr {
+    width: 100%;
+}
 
-a.buyButton {
+
+
+a.buyButton /* buyButtonAnchor */ {
     position: absolute; /*  https://www.w3docs.com/snippets/css/how-to-set-absolute-positioning-relative-to-the-parent-element.html  */
     width: 80%;
     left: 5%;
     bottom: 12%;
 }
-div.buyButton {
+div.buyButton /* buyButtonDiv */ {
     background: linear-gradient(180deg, rgba(255,0,0,.8), rgba(255,0,0,0) 90%);
     width: 100%;
     text-align: center;
     padding: 0.5em 1em;
     border-radius: 1em;
+    transition:all 0.4s ease-out;
 }
-div.buyButton h1 {
+div.buyButton h1 /* buyButtonHeader */{
     color: rgb(13, 212, 119);
     text-align: center;
+    transition: all 0.4s ease-in-out;
 }
 div.keyInfo {
     display: flex;
@@ -439,6 +487,11 @@ form input[name="submit"] {
     width: 66%;
     max-width: 12em;
     padding: 0;
+    transition: all 0.3s ease-in;
+}
+form input[name="submit"]:hover {
+    font-size: 3em;
+    color: rgb(148, 234, 121);
 }
 
 img.ksp2-logo {
@@ -452,6 +505,31 @@ img.ksp2-logo {
     height: 72px;
 }
 
+* {
+    /*animation-name: finallyAwake;
+    animation-timing-function: ease-out;
+    animation-duration: 0.8s;
+    animation-play-state: running;
+    animation-iteration-count: 1;*/
+}
+@keyframes finallyAwake {
+    from {
+        filter:saturate(0%); /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate */
+    }
+    to {
+        filter:saturate(100%);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+}
+.xcenter-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .justify-flex-end {
     justify-self:flex-end;
 }
@@ -471,6 +549,9 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 } /* https://blog.hubspot.com/website/remove-underline-from-links-css */
 
+
+
+
 @media (min-width: 500px) {
     header > nav {
         display: flex;
@@ -478,7 +559,7 @@ a:link, a:visited, a:hover, a:active {
     div.hamburger-icon {
         display: none;
     }
-    div.chat-icon {
+    img.chat-icon {
         display: flex;
     }
     footer section.footer-info {
@@ -490,7 +571,7 @@ a:link, a:visited, a:hover, a:active {
     footer section.footer * {
         margin: 0 1.2%;
     }
-    article.introduction {
+    .ksp2-iconic {
         height: 37vh;
         background-size: 190%;
     }
@@ -508,12 +589,21 @@ a:link, a:visited, a:hover, a:active {
     }
 }
 @media (min-width: 750px) {
-    article.introduction {
+    .ksp2-iconic {
         height: 45vh;
         background-size: 130%;
     }
     div.buyButton {
         padding: 1.3em 2.6em;
+    }
+    h1 {
+        font-size: 3.8em;
+    } h2 {
+        font-size: 3.4em;
+    } h3 {
+        font-size: 2.7em;
+    } p {
+        font-size: 1.4em;
     }
     
 }
@@ -532,7 +622,7 @@ a:link, a:visited, a:hover, a:active {
     section.container {
         padding: 10em 0;
     }
-    article.introduction {
+    .ksp2-iconic {
         height: 55.5vh;
         background-size: 110%;
     }

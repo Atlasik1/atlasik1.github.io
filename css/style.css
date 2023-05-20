@@ -1,9 +1,9 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /*  https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2  */
 }
 
 h1, h2, h3, p {
-    font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'; /* source: https://www.kerbalspaceprogram.com/games-kerbal-space-program-2 */
+    font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'; /* source: https://www.kerbalspaceprogram.com/games-kerbal-space-program-2  */
     color: white;
 } h1 {
     font-size: 2.6em;
@@ -26,7 +26,7 @@ header, nav {
     align-items: center;
 }
 header {
-    background: linear-gradient(125deg,rgb(59, 92, 116) 15%, black); /* https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient */
+    background: linear-gradient(125deg,rgb(59, 92, 116) 15%, black); /* https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient  */
     justify-content: space-evenly;
 }
 header > nav {
@@ -36,7 +36,7 @@ header > nav {
 }
 div.hamburger-icon {
     background-image: url("https://img.icons8.com/?size=512&id=3096&format=png");
-    filter: invert() drop-shadow(1px 1px 1.5px rgba(49, 255, 49, 0.795)); /* https://css-tricks.com/almanac/properties/f/filter/ */
+    filter: invert() drop-shadow(1px 1px 1.5px rgba(49, 255, 49, 0.795)); /* https://css-tricks.com/almanac/properties/f/filter/  */
     background-size: cover;
     width: 50px;
     height: 50px;

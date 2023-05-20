@@ -73,6 +73,7 @@ div.hamburger-container {
     align-items: center;
     justify-content: center;
     gap: 5%;
+    z-index: 101;
 }
 
 footer {

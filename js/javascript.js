@@ -126,5 +126,5 @@ function chatSetup() {
         <p id="chat-agi">AGI</p>
     `;
 }
-console.log("js done");
+//console.log("js done");
 // 

@@ -1,0 +1,565 @@
+h1, h2, h3, p {
+    font-family: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'; /* source: https://www.kerbalspaceprogram.com/games-kerbal-space-program-2 */
+    color: white;
+} h1 {
+    font-size: 2.6em;
+    -webkit-text-stroke: 2px; /*  https://stackoverflow.com/questions/4919076/outline-effect-to-text  */
+} h2 {
+    font-size: 2.3em;
+} h3 {
+    font-size: 1.8em;
+} p {
+    font-size: 1.1em;
+} b {
+    font-weight: bold;
+} i {
+    font-style: italic;
+}
+
+header, nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+header {
+    background: linear-gradient(125deg,rgb(59, 92, 116) 15%, black); /* https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient */
+    justify-content: space-evenly;
+}
+header > nav {
+    padding: 0% 2%;
+    column-gap: 3%;
+    display: none;
+}
+div.hamburger-icon {
+    background-image: url("https://img.icons8.com/?size=512&id=3096&format=png");
+    filter: invert() drop-shadow(1px 1px 1.5px rgba(49, 255, 49, 0.795)); /* https://css-tricks.com/almanac/properties/f/filter/ */
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    justify-self: flex-end;
+    display: block;
+}
+div.hamburger {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+div.hamburger-void {
+    backdrop-filter: blur(5px);
+    width: 40%;
+    height: 100%;
+    z-index: 100;
+}
+div.hamburger-menu {
+    width: 60%;
+    height: 100%;
+    background-color: black;
+    
+    z-index: 100;
+}
+div.hamburger-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+footer > section {
+    width: 100%;
+}
+footer section.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    flex-wrap: wrap;
+    padding: 4em 0;
+}
+footer section.footer-info section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2em;
+}
+footer section.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.6em 0;
+}
+footer section.footer * {
+    margin: 0;
+}
+footer * * img.private-division-logo {
+    width: 150px;
+    height: 150px;
+}
+footer *, nav a p {
+    color: whitesmoke;
+}
+footer > section.footer-info > section:first-child > a:first-child {
+    width: 140px;
+    height: 140px;
+}
+footer > section.footer-info > section:first-child > a:first-child img {
+    width: inherit;
+    height: inherit;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(2, 8, 26);
+}
+section {
+    margin-left: auto;
+    margin-right: auto;
+}
+section.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4em 0;
+}
+
+
+section.introduction {
+    display: flex;
+    justify-content: center;
+    padding: 4em 0;
+    width: 100%;
+}
+section.contact {
+    background-color: lightsteelblue;
+    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.75em;
+}
+section.contact * {
+    color: black;
+}
+section.purchase {
+    background-size: cover;
+    background-position: center;
+}
+section.purchase > section.introduction {
+    padding: 6em 0;
+}
+section.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 2em;
+    color: white;
+    background-color: black;
+}
+
+.image {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+article.introduction {
+    background-image: url("../images/ksp2_iconic.jpg");
+    background-size: 250%;
+    height: 40vh;
+    position: relative;
+} article.kerbinSunset1 {
+    background-image: url("../images/kerbin_sunset.jpg");
+} article.graphics1 {
+    background-image: url("../images/graphics.png");
+} article.kerbals1 {
+    background-image: url("../images/kerbals.jpg");
+} article.userinterface1 {
+    background-image: url("../images/userinterface.jpg");
+} article.planets1 {
+    background-image: url("../images/planets.png");
+} article.planetaryBase1 {
+    background-image: url("../images/colonies2.jpg");
+} .inOrbitStation1 {
+    background-image: url("../images/spacestation.jpg");
+} article.orbitalAssembly1 {
+    background-image: url("../images/space_shuttle.jpg");
+} .noSkybox1 {
+    background-image: url("../images/noskybox.webp");
+} article.debdebSystem1 {
+    background-image: url("../images/planet.webp");
+} article.upcoming1 {
+    background-image: url("../images/flight.jpg");
+} article.newFrontier1 {
+    background-image: url("../images/newfrontier.jpg");
+} article.cooperation1 {
+    background-image: url("../images/multiplayer6.png");
+} .pvp1 {
+    background-image: url("../images/multiplayer5.png");
+} article.sinceLastAccident {
+    background-image: url("../images/dayssincelastaccident.png");
+    height: 83.5vh;
+} .flyingJeb {
+    background-image: url("../images/flyingjeb.jpg");
+}
+
+div.sectionHeader {
+    height: 60vh;
+    background-color: rgb(80, 144, 202);
+    display: flex;
+    align-items: center;
+} div.sectionHeader h2 {
+    color: black;
+}
+
+.sectionTextContainer {
+    background-color:rgb(19, 161, 114);
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    position: absolute;
+    left: 6%;
+    bottom: 16%;
+}
+.sectionText {
+    padding-left: 12.5%;
+}
+
+div.game-facts { /* "info/fact cards" about the game */
+    width: 100%;
+    height: min-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2em;
+    padding: 0.8em;
+} 
+div.card {
+    border-radius: 1em;
+    overflow: hidden;
+    position: relative;
+    box-shadow: #0005 5px 5px 10px;
+}
+div.card > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+div.card-content {
+    padding: 4em 1em;
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease;
+}
+div.card-content:hover {
+    backdrop-filter: blur(10px);
+}
+div.card-content p {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+div.chat-icon {
+    display: none;
+    position: fixed;
+    right: 1.5em;
+    bottom: 3.5em;
+    background-color: gainsboro;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+}
+div.chat {
+    max-width: 24em;
+    max-height: 32em;
+    
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1em;
+
+    border-radius: 2em;
+
+    position: fixed;
+    right: 1.5em;
+    margin-left: 1.5em;
+    bottom: 3.5em;
+    background-color: rgb(201, 190, 141);
+    z-index: 99;
+}
+div.chat > section.content, div.chat > textarea[name="chat"] {
+    width: 100%;
+    border-radius: 1em;
+    box-sizing: border-box;
+    padding: 1em;
+}
+div.chat > section.content {
+    background-color: white;
+    flex: 3;
+    overflow-y: auto; /*  https://stackoverflow.com/questions/4646708/css-how-to-get-scrollbars-for-div-inside-container-of-fixed-height  */
+    overflow-x: hidden;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.chat > textarea[name="chat"] {
+    background-color: rgb(176, 214, 2375);
+    flex: 1;
+}
+
+div.chat > section.content > div.chat-exit {
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    width: 10px;
+    height: 30px;
+    background-color: green;
+    overflow: visible;
+}
+
+div.chat > section.content div {
+    width: 90%;
+    margin: 5% 0;
+    padding: 5%;
+    background-color: rgb(97, 66, 66);
+    overflow: scroll;
+    border-radius: 1em;
+}
+div.chat-infobox {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(97, 66, 66);
+    border: dashed green 4px;
+}
+div.chat > section.content * {
+    font-size: 1.4em;
+}
+div.chat-infobox hr {
+    width: 100%;
+}
+div.chat > section.content p, div.chat > section.content h2 {
+    color: black;
+}
+
+a.buyButton {
+    position: absolute; /*  https://www.w3docs.com/snippets/css/how-to-set-absolute-positioning-relative-to-the-parent-element.html  */
+    width: 80%;
+    left: 5%;
+    bottom: 12%;
+}
+div.buyButton {
+    background: linear-gradient(180deg, rgba(255,0,0,.8), rgba(255,0,0,0) 90%);
+    width: 100%;
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+}
+div.buyButton h1 {
+    color: rgb(13, 212, 119);
+    text-align: center;
+}
+div.keyInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 11em 2em;
+}
+div.keyInfo * {
+    color: white;
+}
+div.keyInfo h2 {
+    padding-bottom: 1em;
+}
+
+div.purchaseLinks {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4%;
+    padding: 4em 2em;
+} div.purchaseLinks * {
+    display: inline-block;
+}
+
+iframe { /* https://stackoverflow.com/questions/5867985/full-screen-iframe-with-a-height-of-100 */
+    display: block;
+    background: black;
+    border: none;
+    height: 40vh;
+    width: 100%;
+    border-bottom: solid rgb(0, 0, 69) 0.6em;
+}
+
+form { /* https://www.w3schools.com/css/css_form.asp */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2em;
+}
+form input, form textarea {
+    width: 70%;
+    box-sizing: border-box;
+    padding: 2em 1em;
+    border-radius: 1em;
+}
+form textarea {
+    height: 20em;
+    color: green;
+}
+form select {
+    width: 30%;
+    max-width: 10em;
+    text-align: center;
+}
+form input[name="submit"] {
+    background-color: rgb(99, 144, 234);
+    font-weight: bold;
+    font-size: 2.2em;
+    width: 66%;
+    max-width: 12em;
+    padding: 0;
+}
+
+img.ksp2-logo {
+    width: 192px;
+    height: 72px;
+} img.steam-logo {
+    width: 72px;
+    height: 72px;
+} img.private-division-logo {
+    width: 72px;
+    height: 72px;
+}
+
+.justify-flex-end {
+    justify-self:flex-end;
+}
+.align-flex-end {
+    align-self: flex-end;
+}
+.limit-width {
+    max-width: 1200px;
+}
+.full-width {
+    width: 100%;
+}
+.backdrop { 
+    backdrop-filter: blur(5px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter */
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+} /* https://blog.hubspot.com/website/remove-underline-from-links-css */
+
+@media (min-width: 500px) {
+    header > nav {
+        display: flex;
+    }
+    div.hamburger-icon {
+        display: none;
+    }
+    div.chat-icon {
+        display: flex;
+    }
+    footer section.footer-info {
+        flex-direction: row;
+    }
+    footer section.footer {
+        flex-direction: row;
+    }
+    footer section.footer * {
+        margin: 0 1.2%;
+    }
+    article.introduction {
+        height: 37vh;
+        background-size: 190%;
+    }
+    .card-content {
+        padding: 6em 3em;
+    }
+    div.buyButton {
+        padding: 1em 2em;
+    }
+    a.buyButton {
+        width: 20%;
+    }
+    iframe {
+        height: 70vh;
+    }
+}
+@media (min-width: 750px) {
+    article.introduction {
+        height: 45vh;
+        background-size: 130%;
+    }
+    div.buyButton {
+        padding: 1.3em 2.6em;
+    }
+    
+}
+@media (min-width: 1200px) { /* desktop */
+    iframe {
+        height: 100vh;
+    }
+    div.game-facts {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    section.introduction {
+        padding-top: 8em;
+        padding-bottom: 0;
+    }
+    section.container {
+        padding: 10em 0;
+    }
+    article.introduction {
+        height: 55.5vh;
+        background-size: 110%;
+    }
+    
+    h1 {
+        font-size: 4.3em;
+    } h2 {
+        font-size: 3.8em;
+    } h3 {
+        font-size: 3.1em;
+    } p {
+        font-size: 1.7em;
+    }
+    header p, footer p {
+        font-size: 1.3em;
+    }
+
+    div.buyButton {
+        padding: 1.5em 3em;
+    }
+
+    section.purchase > section.introduction {
+        padding: 10em  0;
+    }
+
+    div.card#colonies-card img {
+        object-position: 0 -4em;
+    }
+}
+/* https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server */

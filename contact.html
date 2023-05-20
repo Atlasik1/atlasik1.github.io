@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSP2 | Contact</title>
+    <link rel="stylesheet" href="https://api-ssps.cajthaml.eu/file/global/css/reset_ld9mrCCm.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="./images/ksp2_logo2.png" class="ksp2-logo"></a>
+        <nav>
+            <a href="./about.html"><p>About</p></a>
+            <a href="./contact.html"><p>Contact</p></a>
+        </nav>
+        <div class="hamburger-icon"></div>
+    </header>
+    <main>
+
+        <article class="full-width sinceLastAccident image">
+            <div class="sectionTextContainer">
+                <h1>Contact</h1>
+            </div>
+        </article>
+
+        <div class="chat-icon"></div>
+
+        <div class="chat">
+            <section class="content">
+                
+            </section>
+            <textarea name="chat">
+
+            </textarea>
+        </div>
+
+        <section class="contact">
+            <p><b>web</b></p>
+            <p>www.kerbalspaceprogram.com</p>
+            <p><b>phone</b></p>
+            <p>+352 37216196</p>
+            <p><b>press mail</b></p>
+            <p>press@privatedivision.com</p>
+            <p><b>business mail</b></p>
+            <p>bizdev@privatedivision.com</p>
+        </section>
+
+        <section class="purchase flyingJeb">
+            <section class="introduction">
+                <h1>Purchase KSP2</h1>
+            </section>
+            <div class="purchaseLinks">
+                <a href="https://store.steampowered.com/app/954850/Kerbal_Space_Program_2/"><img src="./images/steam_logo.png" class="steam-logo"></a>
+                <a href="https://account.privatedivision.com/oauth2/authorize?locale=en&client_id=761e734e-29db-4d24-8b87-9beaecfd896a&response_type=code&scope=offline_access&redirect_uri=https%3A%2F%2Fstore.privatedivision.com%2Fconnect%2Fgateway"><img src="./images/privatedivision_logo.png" class="private-division-logo"></a>    
+            </div>
+        </section>
+
+        <section class="contact">
+            <h1>Contact us</h1>
+            <form action="./php/contact.php" method="post"> <!--  https://ssps.cajthaml.eu/2-wba/selfstudy/lekce-formulare-pozicovani-a-frameworky/prvky-formul%C3%A1%C5%99e-63d2d86bd98d120dfb359196  -->
+                <input type="email" name="email" placeholder="Your e-mail address.">
+                <textarea type="text" name="message" placeholder="Your message." required></textarea> <!--  https://www.tutorialspoint.com/How-to-Create-a-Multi-line-Text-Input-Text-Area-In-HTML#  -->
+                <select name="messageType">
+                    <option value="1">Feedback</option>
+                    <option value="2">Support</option>
+                    <option value="3">Business</option>
+                    <option value="4">Other</option>
+                </select>
+                <input type="submit" name="submit">
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <section class="footer-info">
+            <section>
+                <a href="https://www.privatedivision.com/"> 
+                    <img src="./images/privatedivision_logo.png" class="private-division-logo" alt="privatedivision_logo">
+                </a>
+            </section>
+           <section>
+                <p><b><u>KSP 2</u></b></p>
+                <a href="index.html"><p>Home</p></a>
+                <a href="about.html"><p>About</p></a>
+                <a href="contact.html"><p>Contact</p></a>
+           </section>
+        </section>
+        <section class="footer">
+            <p>2023 © Kerbal Space Program 2</p>
+            <p>Ondrej Benes - Zaverecna prace</p>
+        </section>
+    </footer>
+
+    <script src="./js/javascript.js"></script>
+</body>
+</html>

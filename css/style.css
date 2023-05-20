@@ -277,6 +277,7 @@ div.card-content {
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.05);
     transition: all 0.5s ease;
+    z-index: 100;
 }
 div.card-content:hover {
     backdrop-filter: blur(10px);
@@ -284,6 +285,7 @@ div.card-content:hover {
 div.card-content p {
     margin-top: 2em;
     margin-bottom: 1em;
+    z-index: 100;
 }
 
 img.chat-icon {

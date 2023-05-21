@@ -516,13 +516,15 @@ img.ksp2-logo {
     height: 72px;
 }
 
+/* 
 * {
-    /*animation-name: finallyAwake;
+    animation-name: finallyAwake;
     animation-timing-function: ease-out;
     animation-duration: 0.8s;
     animation-play-state: running;
-    animation-iteration-count: 1;*/
+    animation-iteration-count: 1;
 }
+*/
 @keyframes finallyAwake {
     from {
         filter:saturate(0%); /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate */

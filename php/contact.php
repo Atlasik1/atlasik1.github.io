@@ -17,32 +17,28 @@
                 
             <section class="message full-width">
                 <?php
-                    $to = "target@seznam.cz";
-                    $subject = $_POST['messageType'];
-                    $message = $_POST['message'];
-                    $headers = "From: ".$_POST['email'];
-
-                    echo "To: ".$to."<br>Subject: ".$subject."<br>Message: <b>".$message."</b><br>Headers: ".$headers;
-
-                    ini_set("SMTP", "smtp.gmail.com");
-                    ini_set("smtp_port", "587");
-                    ini_set("username", "email@gmail.com");
-                    ini_set("password", "password");
-                    ini_set("SMTPSecure", "tls");
-
-                    if(mail($to, $subject, $message, $headers)) {
-                        echo "<p>Thank you for your message!</p>";
-                    } else {
-                        echo "<p>Sorry, there was an error sending your message. Please try again later.</p>";
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") { // https://www.w3schools.com/php/php_form_validation.asp
+                        $to = "press@privatedivision.com"; // https://www.w3schools.com/php/php_variables.asp
+                        $subject = strip_tags($_POST['messageType']); // https://www.w3docs.com/snippets/php/how-can-i-sanitize-user-input-with-php.html
+                        $message = strip_tags($_POST['message']);
+                        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+                        $headers = "From: ".$email;
+                    
+                        echo "To: ".$to."<br>Subject: ".$subject."<br>Message: <b>".$message."</b><br>Headers: ".$headers;
+                    
+                        if(mail($to, $subject, $message, $headers)) { // https://mailtrap.io/blog/php-email-contact-form/
+                            echo "<p>Thank you for your message!</p>";
+                        } else {
+                            echo "<p>Sorry, there was an error sending your message. Please try again later.</p>";
+                        }
+                        //sleep(3); # https://www.w3schools.com/php/func_misc_sleep.asp
+                        header('Location: ../contact.html');
+                        exit();
                     }
                 ?> 
             </section>
 
         </main>
     </body>
-    <?php
-        //sleep(3); # https://www.w3schools.com/php/func_misc_sleep.asp
-        header('Location: ../contact.html');
-    ?>
 </html>
 <!-- https://www.quora.com/How-can-I-run-my-PHP-content-on-GitHub-pages -->

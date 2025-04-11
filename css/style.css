@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth; /*  https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2  */
 }
@@ -50,20 +59,19 @@ div.hamburger {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 101;
+    z-index: 100;
 }
 div.hamburger-void {
     backdrop-filter: blur(5px);
     width: 40%;
     height: 100%;
-    z-index: 101;
+    z-index: 100;
 }
 div.hamburger-menu {
     width: 60%;
     height: 100%;
     background-color: black;
-    
-    z-index: 101;
+    z-index: 100;
 }
 div.hamburger-container {
     width: 100%;
@@ -73,7 +81,6 @@ div.hamburger-container {
     align-items: center;
     justify-content: center;
     gap: 5%;
-    z-index: 101;
 }
 
 footer {
@@ -141,7 +148,6 @@ section.container {
     justify-content: center;
     padding: 4em 0;
 }
-
 
 section.introduction {
     display: flex;
@@ -235,7 +241,7 @@ div.sectionHeader {
 }
 
 .sectionTextContainer {
-    background-color:rgb(19, 161, 114);
+    background-color: rgb(19, 161, 114);
     width: fit-content;
     padding: 0.5em 1em;
     border-radius: 1em;
@@ -248,7 +254,7 @@ div.sectionHeader {
     transition: all 0.5s ease-in;
 }
 .sectionText:hover {
-    transform:translateX(5%) scale(1.25) skewX(-12deg);
+    transform: translateX(5%) scale(1.25) skewX(-12deg);
 }
 
 div.game-facts { /* "info/fact cards" about the game */
@@ -296,12 +302,10 @@ img.chat-icon {
     position: fixed;
     right: 1.5em;
     bottom: 3.5em;
-
     width: 50px;
     height: 50px;
     z-index: 100;
     filter: invert() drop-shadow(0 0 50px crimson); /*  https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness  */
-
     transition: all 0.4s ease;
     animation-name: chatIconWander;
     animation-timing-function: ease-in-out;
@@ -330,14 +334,11 @@ img.chat-icon:hover {
 div.chat {
     max-width: 24em;
     max-height: 32em;
-    
     display: none;
     flex-direction: column;
     gap: 8px;
     padding: 1em;
-
     border-radius: 2em;
-
     position: fixed;
     right: 1.5em;
     margin-left: 1.5em;
@@ -357,7 +358,6 @@ div.chat > section.content {
     overflow-y: auto; /*  https://stackoverflow.com/questions/4646708/css-how-to-get-scrollbars-for-div-inside-container-of-fixed-height  */
     overflow-x: hidden;
     gap: 2em;
-
     position: relative;
     display: flex;
     flex-direction: column;
@@ -387,9 +387,10 @@ div.chat > section.content * {
     font-size: 1.2em;
 }
 div.chat > section.content div {
-    width: 90%;
+    width: 100%;
     margin: 5% 0;
-    padding: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
     background-color: rgb(97, 66, 66);
     border-radius: 1em;
 }
@@ -413,9 +414,8 @@ div.chat section.content article div.chat-infobox p {
 }
 article div.chat-infobox hr {
     width: 100%;
+    padding: 0;
 }
-
-
 
 a.buyButton /* buyButtonAnchor */ {
     position: absolute; /*  https://www.w3docs.com/snippets/css/how-to-set-absolute-positioning-relative-to-the-parent-element.html  */
@@ -429,9 +429,9 @@ div.buyButton /* buyButtonDiv */ {
     text-align: center;
     padding: 0.5em 1em;
     border-radius: 1em;
-    transition:all 0.4s ease-out;
+    transition: all 0.4s ease-out;
 }
-div.buyButton h1 /* buyButtonHeader */{
+div.buyButton h1 /* buyButtonHeader */ {
     color: rgb(13, 212, 119);
     text-align: center;
     transition: all 0.4s ease-in-out;
@@ -516,21 +516,19 @@ img.ksp2-logo {
     height: 72px;
 }
 
-/* 
 * {
-    animation-name: finallyAwake;
+    /*animation-name: finallyAwake;
     animation-timing-function: ease-out;
     animation-duration: 0.8s;
     animation-play-state: running;
-    animation-iteration-count: 1;
+    animation-iteration-count: 1;*/
 }
-*/
 @keyframes finallyAwake {
     from {
-        filter:saturate(0%); /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate */
+        filter: saturate(0%); /* https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate */
     }
     to {
-        filter:saturate(100%);
+        filter: saturate(100%);
     }
 }
 
@@ -544,7 +542,7 @@ img.ksp2-logo {
     align-items: center;
 }
 .justify-flex-end {
-    justify-self:flex-end;
+    justify-self: flex-end;
 }
 .align-flex-end {
     align-self: flex-end;
@@ -561,9 +559,6 @@ img.ksp2-logo {
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 } /* https://blog.hubspot.com/website/remove-underline-from-links-css */
-
-
-
 
 @media (min-width: 500px) {
     header > nav {
@@ -618,7 +613,6 @@ a:link, a:visited, a:hover, a:active {
     } p {
         font-size: 1.4em;
     }
-    
 }
 @media (min-width: 1200px) { /* desktop */
     iframe {
@@ -639,7 +633,6 @@ a:link, a:visited, a:hover, a:active {
         height: 55.5vh;
         background-size: 110%;
     }
-    
     h1 {
         font-size: 4.3em;
     } h2 {
@@ -652,15 +645,12 @@ a:link, a:visited, a:hover, a:active {
     header p, footer p {
         font-size: 1.3em;
     }
-
     div.buyButton {
         padding: 1.5em 3em;
     }
-
     section.purchase > section.introduction {
-        padding: 10em  0;
+        padding: 10em 0;
     }
-
     div.card#colonies-card img {
         object-position: 0 -4em;
     }
